@@ -1,0 +1,37 @@
+package assignment11; 
+import java.io.*; 
+
+public class Assignment11 { 
+    public static void main(String[] args) { 
+        try { 
+            // Write to File 
+            FileOutputStream fout = new FileOutputStream("test.txt"); 
+            String s = "Hello, Welcome to Java File Handling"; 
+            byte b[] = s.getBytes(); 
+            fout.write(b); 
+            fout.close(); 
+            System.out.println("Data Written Successfully..."); 
+
+            // Read from File 
+            FileInputStream fin = new FileInputStream("test.txt"); 
+            int i=0; 
+            System.out.println("File Content:"); 
+            while((i=fin.read())!=-1) { 
+                System.out.print((char)i); 
+            } 
+            fin.close(); 
+
+            // File Class Methods 
+            File f = new File("test.txt"); 
+            System.out.println("\n\nFile name: " + f.getName()); 
+            System.out.println("Path: " + f.getPath()); 
+            System.out.println("Absolute Path: " + f.getAbsolutePath()); 
+            System.out.println("Writable: " + f.canWrite()); 
+            System.out.println("Readable: " + f.canRead()); 
+            System.out.println("File size in bytes: " + f.length()); 
+        } 
+        catch(Exception e) { 
+            System.out.println(e); 
+        } 
+    } 
+}
