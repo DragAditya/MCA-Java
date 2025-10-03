@@ -1,0 +1,116 @@
+package assignment8; 
+import javax.swing.*; 
+import java.io.*; 
+import java.awt.*; 
+
+public class NewJFrame extends javax.swing.JFrame { 
+    public NewJFrame() { 
+        initComponents(); 
+    } 
+
+    @SuppressWarnings("unchecked") 
+    private void initComponents() { 
+        jPopupMenu1 = new javax.swing.JPopupMenu(); 
+        Red = new javax.swing.JMenuItem(); 
+        Green = new javax.swing.JMenuItem(); 
+        Blue = new javax.swing.JMenuItem(); 
+        jDialog1 = new javax.swing.JDialog(); 
+        jTextField1 = new javax.swing.JTextField(); 
+        Click = new javax.swing.JButton(); 
+        jPanel1 = new javax.swing.JPanel(); 
+        jMenuBar1 = new javax.swing.JMenuBar(); 
+        jMenu1 = new javax.swing.JMenu(); 
+        jMenuItem1 = new javax.swing.JMenuItem(); 
+        jSeparator1 = new javax.swing.JPopupMenu.Separator(); 
+        jMenuItem2 = new javax.swing.JMenuItem(); 
+        jSeparator2 = new javax.swing.JPopupMenu.Separator(); 
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem(); 
+        jSeparator3 = new javax.swing.JPopupMenu.Separator(); 
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem(); 
+        jSeparator5 = new javax.swing.JPopupMenu.Separator(); 
+        jMenuItem6 = new javax.swing.JMenuItem(); 
+        jSeparator4 = new javax.swing.JPopupMenu.Separator(); 
+        jMenuItem4 = new javax.swing.JMenuItem(); 
+        jMenu2 = new javax.swing.JMenu(); 
+        jMenuItem3 = new javax.swing.JMenuItem(); 
+
+        Red.setText("Red"); 
+        Red.addActionListener(new java.awt.event.ActionListener() { 
+            public void actionPerformed(java.awt.event.ActionEvent evt) { 
+                jPanel1.setBackground(Color.red); 
+            } 
+        }); 
+        jPopupMenu1.add(Red); 
+
+        Green.setText("Green"); 
+        Green.addActionListener(new java.awt.event.ActionListener() { 
+            public void actionPerformed(java.awt.event.ActionEvent evt) { 
+                jPanel1.setBackground(Color.green); 
+            } 
+        }); 
+        jPopupMenu1.add(Green); 
+
+        Blue.setText("Blue"); 
+        Blue.addActionListener(new java.awt.event.ActionListener() { 
+            public void actionPerformed(java.awt.event.ActionEvent evt) { 
+                jPanel1.setBackground(Color.blue); 
+            } 
+        }); 
+        jPopupMenu1.add(Blue); 
+
+        jDialog1.getContentPane().setLayout(new java.awt.FlowLayout()); 
+        jTextField1.setText("jTextField1"); 
+        jDialog1.getContentPane().add(jTextField1); 
+        Click.setText("Click"); 
+        jDialog1.getContentPane().add(Click); 
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE); 
+        jPanel1.setComponentPopupMenu(jPopupMenu1); 
+
+        jMenu1.setText("File"); 
+        jMenuItem1.setText("InputDialogBox"); 
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() { 
+            public void actionPerformed(java.awt.event.ActionEvent evt) { 
+                String n=JOptionPane.showInputDialog("Enter Name"); 
+                System.out.println("Name="+n); 
+            } 
+        }); 
+        jMenu1.add(jMenuItem1); 
+        jMenu1.add(jSeparator1); 
+
+        jMenuItem2.setText("MessageDialogBox"); 
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() { 
+            public void actionPerformed(java.awt.event.ActionEvent evt) { 
+                JOptionPane.showMessageDialog(null,"Success"); 
+            } 
+        }); 
+        jMenu1.add(jMenuItem2); 
+        jMenu1.add(jSeparator2); 
+
+        jCheckBoxMenuItem1.setText("ConfirmDialogBox"); 
+        jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() { 
+            public void actionPerformed(java.awt.event.ActionEvent evt) { 
+                int i=JOptionPane.showConfirmDialog(null, "Are you Sure?"); 
+                System.out.println(i); 
+            } 
+        }); 
+        jMenu1.add(jCheckBoxMenuItem1); 
+        jMenu1.add(jSeparator3); 
+
+        jRadioButtonMenuItem1.setText("OptionDialogBox"); 
+        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() { 
+            public void actionPerformed(java.awt.event.ActionEvent evt) { 
+                String[] options = {"first", "second", "third"}; 
+                int x = JOptionPane.showOptionDialog(null, "Select Option", "OptionDialogBox", 
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]); 
+                System.out.println("Your Option is "+x); 
+            } 
+        }); 
+        jMenu1.add(jRadioButtonMenuItem1); 
+        jMenu1.add(jSeparator5); 
+
+        jMenuItem6.setText("FileChooser"); 
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() { 
+            public void actionPerformed(java.awt.event.ActionEvent evt) { 
+                JFileChooser fc=new JFileChooser();     
+                int i=fc.showOpen
